@@ -45,7 +45,7 @@ pub fn part_two(input: &str) -> Option<u32> {
 
     for line in input.lines() {
         let numbers = line.split_whitespace().map(|x| x.parse::<u32>().unwrap()).collect::<Vec<u32>>();
-        let is_safe = check_for_safety(&numbers) || get_slices_of_length_n(numbers.len()-1, numbers).iter().any(|x| check_for_safety(&x));
+        let is_safe = check_for_safety(&numbers) || get_slices_of_length_n(numbers.len()-1, numbers).iter().any(check_for_safety);
         safe_reports += if is_safe { 1 } else { 0 };
     }
 
