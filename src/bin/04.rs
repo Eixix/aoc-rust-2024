@@ -57,7 +57,7 @@ pub fn part_two(input: &str) -> Option<u32> {
 
     // Diagonal directions
     let directions: [(i32, i32); 4] = [(1, 1), (1, -1), (-1, 1), (-1, -1)];
-    let mut sum = 0;
+    let sum = 0;
 
     for (x, row) in matrix.iter().enumerate() {
         for (y, c) in row.iter().enumerate() {
